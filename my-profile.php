@@ -1,5 +1,8 @@
 <?php
 session_start();
+require_once 'config.php';
+$conn = $conexion;
+
 if (!isset($_SESSION['user_id'])) {
     header("Location: login.php");
     exit;
@@ -7,16 +10,6 @@ if (!isset($_SESSION['user_id'])) {
 
 $user_id = $_SESSION['user_id'];
 $user_name = $_SESSION['user_name'];
-
-$servername = "localhost";
-$username = "ortega";
-$password = "jose2025";
-$dbname = "social_network";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-if ($conn->connect_error) {
-    die("Conexión fallida: " . $conn->connect_error);
-}
 
 // Obtener información detallada del usuario
 $sql_user = "SELECT name, email, bio, profile_image, created_at FROM users WHERE id = ?";
@@ -51,6 +44,7 @@ $posts_result = $stmt_posts->get_result();
 
 $conn->close();
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>

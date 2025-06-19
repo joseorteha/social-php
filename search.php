@@ -1,18 +1,11 @@
 <?php
 session_start();
+require_once 'config.php';
+$conn = $conexion;
+
 if (!isset($_SESSION['user_id'])) {
     header("Location: login.php");
     exit;
-}
-
-$servername = "localhost";
-$username = "ortega";
-$password = "jose2025";
-$dbname = "social_network";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-if ($conn->connect_error) {
-    die("Conexión fallida: " . $conn->connect_error);
 }
 
 $search_query = isset($_GET['query']) ? $_GET['query'] : '';
@@ -32,8 +25,7 @@ if (!empty($search_query)) {
     $stmt->close();
 }
 $conn->close();
-?>
-<?php
+
 $user_name = $_SESSION['user_name']; // Necesitamos el nombre para la navbar
 ?>
 <!DOCTYPE html>

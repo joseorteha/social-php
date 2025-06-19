@@ -1,5 +1,8 @@
 <?php
 session_start();
+require_once 'config.php';
+$conn = $conexion;
+
 if (!isset($_SESSION['user_id'])) {
     header("Location: login.php");
     exit;
@@ -11,16 +14,6 @@ if (!isset($_GET['id'])) {
 }
 
 $profile_user_id = $_GET['id'];
-
-$servername = "localhost";
-$username = "ortega";
-$password = "jose2025";
-$dbname = "social_network";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-if ($conn->connect_error) {
-    die("Conexión fallida: " . $conn->connect_error);
-}
 
 // Obtener información del usuario del perfil
 $sql_user = "SELECT name FROM users WHERE id = ?";
