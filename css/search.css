@@ -1,0 +1,123 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f4f6fb;
+    color: #222;
+    margin: 0;
+}
+.navbar {
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.navbar-brand {
+    font-size: 1.5rem;
+    color: #4a90e2;
+    font-weight: bold;
+    text-decoration: none;
+}
+.navbar-links {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+.btn-logout {
+    background: #e74c3c;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 0.5rem 1.2rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.btn-logout:hover {
+    background: #c0392b;
+}
+.main-container {
+    max-width: 700px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+.card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+.card h3 {
+    margin-top: 0;
+    color: #4a90e2;
+    margin-bottom: 1rem;
+}
+.form-control {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #dcdde1;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    font-family: inherit;
+}
+.btn {
+    background: #4a90e2;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 0.5rem 1.2rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.btn:hover {
+    background: #357abd;
+}
+.user-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.user-list li {
+    background: #f9fafb;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.user-list .user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #eaf1fb;
+}
+.user-list .user-name {
+    font-weight: 500;
+    color: #4a90e2;
+    text-decoration: none;
+}
+.user-list .user-name:hover {
+    text-decoration: underline;
+}
+@media (max-width: 600px) {
+    .main-container {
+        padding: 0 0.5rem;
+    }
+    .navbar {
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 1rem;
+    }
+    .navbar-links {
+        gap: 0.5rem;
+    }
+} 
