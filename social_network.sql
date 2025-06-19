@@ -71,17 +71,18 @@ CREATE TABLE `posts` (
   `id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `content` text NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `image` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `posts`
 --
 
-INSERT INTO `posts` (`id`, `user_id`, `content`, `created_at`) VALUES
-(1, 1, '¡Mi primera publicación en la red social!', '2025-06-14 19:02:07'),
-(2, 2, 'Hola a todos', '2025-06-14 19:16:39'),
-(3, 3, 'Hola a todos\r\n', '2025-06-14 19:27:14');
+INSERT INTO `posts` (`id`, `user_id`, `content`, `created_at`, `image`) VALUES
+(1, 1, '¡Mi primera publicación en la red social!', '2025-06-14 19:02:07', NULL),
+(2, 2, 'Hola a todos', '2025-06-14 19:16:39', NULL),
+(3, 3, 'Hola a todos\r\n', '2025-06-14 19:27:14', NULL);
 
 -- --------------------------------------------------------
 
@@ -95,18 +96,19 @@ CREATE TABLE `users` (
   `email` varchar(100) NOT NULL,
   `password` varchar(255) NOT NULL,
   `bio` text DEFAULT NULL,
-  `profile_image` varchar(255) DEFAULT NULL,
-  `created_at` datetime NOT NULL DEFAULT current_timestamp()
+  `profile_pic` varchar(255) DEFAULT NULL,
+  `created_at` datetime NOT NULL DEFAULT current_timestamp(),
+  `username` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `password`, `bio`, `profile_image`, `created_at`) VALUES
-(1, 'Juan Pérez', 'juan@example.com', 'contraseña123', NULL, NULL, '2025-06-14 13:56:01'),
-(2, 'Jose Ortega', 'joseortegahac@gmail.com', 'jose2025', NULL, NULL, '2025-06-14 13:56:01'),
-(3, 'Jose', 'jose@gmail.com', '$2y$10$7GEvTXp0gNOxVHHg/TQzyOcTs2N1iXi3CuhCHA6F3B2iWrjvITaWy', NULL, NULL, '2025-06-14 13:56:01');
+INSERT INTO `users` (`id`, `name`, `email`, `password`, `bio`, `profile_pic`, `created_at`, `username`) VALUES
+(1, 'Juan Pérez', 'juan@example.com', 'contraseña123', NULL, NULL, '2025-06-14 13:56:01', ''),
+(2, 'Jose Ortega', 'joseortegahac@gmail.com', 'jose2025', NULL, NULL, '2025-06-14 13:56:01', ''),
+(3, 'Jose', 'jose@gmail.com', '$2y$10$7GEvTXp0gNOxVHHg/TQzyOcTs2N1iXi3CuhCHA6F3B2iWrjvITaWy', NULL, NULL, '2025-06-14 13:56:01', '');
 
 --
 -- Índices para tablas volcadas
