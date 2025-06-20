@@ -1,0 +1,12 @@
+# Credenciales de la base de datos
+config.php
+
+# Archivos de sesión y cookies
+cookies.txt
+
+# Contenido subido por el usuario
+images/
+
+# Archivos de dependencias (si usaras Composer en el futuro)
+vendor/
+composer.lock 
